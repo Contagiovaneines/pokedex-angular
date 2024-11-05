@@ -316,29 +316,71 @@ Acesse `http://localhost:4200/` no seu navegador para visualizar a Pokedex.
 
 Contribuições são sempre bem-vindas! Para contribuir com este projeto, siga as etapas abaixo:
 
-1. Faça um fork do projeto.
-2. Crie uma nova branch com suas alterações:
-   ```bash
-   git checkout -b minha-nova-feature
-   ```
-3. Faça suas alterações e commit:
-   ```bash
-   git commit -m 'Adicionando nova feature'
-   ```
-4. Envie para o seu fork:
-   ```bash
-   git push origin minha-nova-feature
-   ```
-5. Abra um Pull Request explicando suas alterações.
+1. **Faça um Fork do Projeto**
+   - Vá até a página do repositório no GitHub.
+   - Clique no botão "Fork" no canto superior direito da página.
+   - Isso criará uma cópia do projeto no seu perfil do GitHub.
+
+2. **Clone o Fork em Sua Máquina Local**
+   - Abra seu terminal.
+   - Use o comando abaixo para clonar o repositório para sua máquina:
+     ```bash
+     git clone https://github.com/seu-usuario/angular-pokedex.git
+     ```
+     (Substitua `seu-usuario` pelo seu nome de usuário do GitHub.)
+
+3. **Navegue até o Diretório do Projeto**
+   - Entre no diretório do projeto clonado:
+     ```bash
+     cd angular-pokedex
+     ```
+
+4. **Crie uma Nova Branch para Suas Alterações**
+   - Antes de fazer alterações, crie uma nova branch. Isso é importante para manter as alterações organizadas e separadas da branch principal (`main` ou `master`):
+     ```bash
+     git checkout -b minha-nova-feature
+     ```
+     (Substitua `minha-nova-feature` por um nome descritivo para a sua feature ou correção.)
+
+5. **Faça Suas Alterações**
+   - Abra os arquivos que deseja modificar no seu editor de código.
+   - Faça as alterações necessárias.
+
+6. **Adicione as Alterações ao Staging**
+   - Após fazer suas alterações, adicione os arquivos modificados ao staging com o comando:
+     ```bash
+     git add .
+     ```
+     (O `.` adiciona todos os arquivos modificados. Você pode também adicionar arquivos específicos usando `git add nome-do-arquivo`.)
+
+7. **Faça um Commit das Suas Alterações**
+   - Agora, faça um commit das suas alterações com uma mensagem clara:
+     ```bash
+     git commit -m 'Adicionando nova feature'
+     ```
+
+8. **Envie as Alterações para o Seu Fork**
+   - Após o commit, envie suas alterações para o repositório remoto:
+     ```bash
+     git push origin minha-nova-feature
+     ```
+
+9. **Abra um Pull Request**
+   - Vá para a página do seu fork no GitHub.
+   - Clique no botão "Compare & pull request" que aparecerá após você enviar sua branch.
+   - Preencha as informações sobre suas alterações e clique em "Create pull request".
 
 ## Como Clonar o Projeto
 
-Para clonar o projeto em sua máquina local, use o comando:
+Para clonar o projeto em sua máquina local, use o seguinte comando:
 
 ```bash
 git clone https://github.com/seu-usuario/angular-pokedex.git
 ```
 
-Substitua `seu-usuario` pelo seu nome de usuário do GitHub.
+- **Substitua `seu-usuario`** pelo seu nome de usuário do GitHub.
+- Após clonar, você terá uma cópia completa do repositório em seu sistema local, e você poderá fazer alterações, testar o projeto ou até mesmo contribuir com novas funcionalidades.
 
+---
 
+Sinta-se à vontade para modificar as instruções conforme necessário para melhor atender às suas necessidades e à sua equipe! 
