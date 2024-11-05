@@ -1,98 +1,126 @@
 # Pokedex
 
-![Pokedex Logo](https://www.pngarts.com/files/4/Pokeball-Download-Transparent-PNG-Image.png) <!-- Adicione uma imagem do logo da Pokédex aqui, se desejar -->
+![Pokedex Logo](https://www.pngarts.com/files/4/Pokeball-Download-Transparent-PNG-Image.png)
 
-Este projeto é uma aplicação web desenvolvida em Angular que utiliza a [PokeAPI](https://pokeapi.co) para exibir uma lista de Pokémon. O objetivo do projeto é fornecer uma interface simples e intuitiva para visualizar informações básicas sobre os Pokémon.
+## Introdução
 
-## Sumário
-
-- [Recursos](#recursos)
-- [Tecnologias Utilizadas](#tecnologias-utilizadas)
-- [Estrutura do Projeto](#estrutura-do-projeto)
-- [Instalação](#instalação)
-- [Como Usar](#como-usar)
-- [Componentes](#componentes)
-- [Serviço](#serviço)
-- [Configuração do App Module](#configuração-do-app-module)
-- [Modelagem de Dados](#modelagem-de-dados)
-- [Contribuição](#contribuição)
-- [Licença](#licença)
-- [Agradecimentos](#agradecimentos)
-
-## Recursos
-
-- Visualização de até 151 Pokémon.
-- Exibição de imagens e nomes dos Pokémon.
-- Design responsivo e intuitivo.
+O projeto **Pokedex** é uma aplicação Angular que permite aos usuários visualizar uma lista de Pokémon utilizando a [PokéAPI](https://pokeapi.co/). O objetivo deste projeto é aprender a criar uma aplicação web interativa usando Angular, componentes e serviços, além de integrar uma API externa para obter dados dinâmicos.
 
 ## Tecnologias Utilizadas
 
-- [Angular](https://angular.io/) - Framework para construção da interface do usuário.
-- [TypeScript](https://www.typescriptlang.org/) - Linguagem de programação usada no desenvolvimento.
-- [PokeAPI](https://pokeapi.co/) - API externa para obter dados dos Pokémon.
-- [Sass](https://sass-lang.com/) - Pré-processador CSS usado para estilização.
+- **Angular**: Framework para construção de aplicações web.
+- **TypeScript**: Linguagem de programação que superset de JavaScript.
+- **HTML/CSS**: Linguagens para estruturação e estilização de páginas web.
+- **PokéAPI**: API RESTful que fornece dados sobre Pokémon.
 
-## Estrutura do Projeto
+## Menu
 
-A estrutura do projeto é a seguinte:
+- [Introdução](#introdução)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Pré-requisitos](#pré-requisitos)
+- [Passo a Passo para Criar o Projeto](#passo-a-passo-para-criar-o-projeto)
+  - [Passo 1: Criar o Projeto](#passo-1-criar-o-projeto)
+  - [Passo 2: Configurar o `tsconfig.json`](#passo-2-configurar-o-tsconfigjson)
+  - [Passo 3: Criar Componentes e Serviço](#passo-3-criar-componentes-e-serviço)
+  - [Passo 4: Configurar o Componente Pokemon Card](#passo-4-configurar-o-componente-pokemon-card)
+  - [Passo 5: Configurar o Componente Pokemon List](#passo-5-configurar-o-componente-pokemon-list)
+  - [Passo 6: Configurar o Serviço Pokemon](#passo-6-configurar-o-serviço-pokemon)
+  - [Passo 7: Configurar o Componente Principal](#passo-7-configurar-o-componente-principal)
+  - [Passo 8: Criar o Modelo de Pokemon](#passo-8-criar-o-modelo-de-pokemon)
+- [Explicação sobre o `HttpClientModule`](#explicação-sobre-o-httpclientmodule)
+- [Finalizando](#finalizando)
+- [Como Contribuir](#como-contribuir)
+- [Como Clonar o Projeto](#como-clonar-o-projeto)
 
-```
-angular-pokedex/
-├── src/
-│   ├── app/
-│   │   ├── pokemon-card/
-│   │   │   ├── pokemon-card.component.html
-│   │   │   ├── pokemon-card.component.sass
-│   │   │   ├── pokemon-card.component.ts
-│   │   ├── pokemon-list/
-│   │   │   ├── pokemon-list.component.html
-│   │   │   ├── pokemon-list.component.sass
-│   │   │   ├── pokemon-list.component.ts
-│   │   ├── service/
-│   │   │   └── pokemon.service.ts
-│   │   ├── pokemon.model.ts
-│   │   ├── app.component.html
-│   │   ├── app.module.ts
-│   ├── index.html
-│   ├── styles.sass
-├── package.json
-```
+## Pré-requisitos
 
-## Instalação
+Antes de começar, você precisará ter o seguinte instalado em sua máquina:
 
-Para instalar e rodar o projeto, siga as etapas abaixo:
-
-1. **Clone o repositório:**
-   ```bash
-   git clone https://github.com/seuusuario/angular-pokedex.git
-   cd angular-pokedex
-   ```
-
-2. **Instale as dependências do projeto:**
-   Execute o comando abaixo para instalar todas as dependências necessárias:
-   ```bash
-   npm install
-   ```
-
-3. **Inicie o servidor de desenvolvimento:**
-   Para rodar o projeto, utilize:
-   ```bash
-   ng serve
-   ```
-
-   Depois, abra seu navegador e acesse `http://localhost:4200`.
-
-## Como Usar
-
-A aplicação será exibida no seu navegador com uma lista de Pokémon. Cada cartão mostrará a imagem e o nome do Pokémon. Você pode navegar por esta lista para visualizar todos os Pokémon disponíveis.
-
-## Componentes
-
-### 1. `PokemonCardComponent`
-
-- **Responsabilidade:** Exibe a imagem e o nome de um único Pokémon.
+- [Node.js](https://nodejs.org/) (inclui npm)
+- Angular CLI: instale globalmente utilizando o comando:
+  ```bash
+  npm install -g @angular/cli
   
-**`pokemon-card.component.html`:**
+
+## Passo a Passo para Criar o Projeto
+
+### Passo 1: Criar o Projeto
+
+Dentro da pasta onde você deseja criar seu projeto, execute o seguinte comando no terminal para criar um novo projeto Angular:
+
+```bash
+ng new angular-pokedex
+```
+
+Depois, navegue até a pasta do projeto:
+
+```bash
+cd angular-pokedex
+```
+
+### Passo 2: Configurar o `tsconfig.json`
+
+Com a versão 14 do Angular, algumas configurações do TypeScript precisam ser ajustadas. Abra o arquivo `tsconfig.json` e faça as seguintes alterações:
+
+```json
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2020",
+    "module": "es2020",
+    "lib": [
+      "es2020",
+      "dom"
+    ],
+    "skipLibCheck": true
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  }
+}
+```
+
+#### Explicação das Configurações
+- **`skipLibCheck`**: Ignora a verificação dos arquivos de declaração de biblioteca, o que pode acelerar a compilação e evitar erros desnecessários.
+
+### Passo 3: Criar Componentes e Serviço
+
+Agora, vamos criar os componentes e o serviço necessários. Execute os seguintes comandos no terminal:
+
+#### Criando os Componentes
+
+```bash
+ng g c pokemon-card
+ng g c pokemon-list
+```
+
+#### Criando o Serviço
+
+```bash
+ng g s pokemon-service
+```
+
+### Passo 4: Configurar o Componente Pokemon Card
+
+#### Arquivo `pokemon-card.component.html`
+
 ```html
 <div class="pokemon-card">
     <img [src]="pegarImagemPokemon()" alt="{{ pokemon }}" />
@@ -100,9 +128,31 @@ A aplicação será exibida no seu navegador com uma lista de Pokémon. Cada car
 </div>
 ```
 
-- **`pegarImagemPokemon()`**: Método que gera a URL da imagem do Pokémon com base no seu número.
+#### Arquivo `pokemon-card.component.sass`
 
-**`pokemon-card.component.ts`:**
+```sass
+.pokemon-card
+  font-family: "Verdana", sans-serif
+  background: #f2f2f2
+  border: 1px solid #c5c5c5
+  padding: 15px
+  margin: 10px
+  border-radius: 10px
+  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28)
+  border-color: rgba(223, 225, 229, 0)
+  border-top: 3px solid #3359ec
+  border-bottom: 6px solid #3359ec
+
+  display: inline-block
+  text-align: center
+
+  img
+    width: 100px
+    height: auto
+```
+
+#### Arquivo `pokemon-card.component.ts`
+
 ```typescript
 import { Component, Input } from '@angular/core';
 
@@ -112,28 +162,29 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./pokemon-card.component.sass']
 })
 export class PokemonCardComponent {
-  @Input() pokemon: string | undefined;
-  @Input() numero: number | undefined;
+  @Input() pokemon: string | undefined; // Pokémon é opcional
+  @Input() numero: number | undefined; // Número é opcional
 
+  // Método para pegar a imagem do Pokémon
   pegarImagemPokemon(): string {
     const numeroFormatado = this.leadingZero(this.numero ?? 0);
     return `https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/${numeroFormatado}.png`;
   }
-
+  
+  // Método para formatar o número com zeros à esquerda
   private leadingZero(value: number | undefined, size = 3): string {
     if (value === undefined) {
-      return '000';
+      return '000'; // Valor padrão se undefined
     }
-    return String(value).padStart(size, '0');
+    return String(value).padStart(size, '0'); // Formata o número
   }
 }
 ```
 
-### 2. `PokemonListComponent`
+### Passo 5: Configurar o Componente Pokemon List
 
-- **Responsabilidade:** Exibe a lista de Pokémon usando o componente `PokemonCardComponent`.
-  
-**`pokemon-list.component.html`:**
+#### Arquivo `pokemon-list.component.html`
+
 ```html
 <div class="pokemon-list">
     <app-pokemon-card *ngFor="let pokemon of pokemonService.pokemons; index as i" [pokemon]="pokemon.name"
@@ -142,7 +193,18 @@ export class PokemonCardComponent {
 </div>
 ```
 
-**`pokemon-list.component.ts`:**
+#### Arquivo `pokemon-list.component.sass`
+
+```sass
+.pokemon-list
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  justify-content: space-evenly
+```
+
+#### Arquivo `pokemon-list.component.ts`
+
 ```typescript
 import { Component } from '@angular/core';
 import { PokemonService } from '../service/pokemon.service';
@@ -157,13 +219,10 @@ export class PokemonListComponent {
 }
 ```
 
-## Serviço
+### Passo 6: Configurar o Serviço Pokemon
 
-### `PokemonService`
+#### Arquivo `pokemon.service.ts`
 
-- **Responsabilidade:** Gerencia as requisições à PokeAPI e armazena os dados dos Pokémon.
-
-**`pokemon.service.ts`:**
 ```typescript
 import { HttpClient } from '@angular/common/http'; 
 import { Injectable } from '@angular/core';
@@ -172,7 +231,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class PokemonService {
-  pokemons: any[] = [];
+  pokemons: any[] = []; // Armazenar detalhes dos Pokémon
 
   constructor(private httpClient: HttpClient) {
     this.carregarPokemons();
@@ -181,32 +240,51 @@ export class PokemonService {
   async carregarPokemons() {
     try {
       const requisicao = await this.httpClient.get<any>('https://pokeapi.co/api/v2/pokemon?limit=151').toPromise();
+
+      // Para cada Pokémon, busque seus detalhes
       const pokemonRequests = requisicao.results.map((pokemon: any) =>
         this.httpClient.get<any>(pokemon.url).toPromise()
       );
 
+      // Aguardar todas as requisições dos Pokémon serem resolvidas
       this.pokemons = await Promise.all(pokemonRequests);
+      
+      // Log para verificar os dados carregados
       console.log(this.pokemons);
     } catch (error) {
-      console.error('Erro ao carregar pokémons:', error);
+      console.error('Erro ao carregar pokémons:', error); // Log de erro caso a requisição falhe
     }
   }
 }
 ```
 
-## Configuração do App Module
+### Passo 7: Configurar o
 
-**`app.module.ts`:**
+ Componente Principal
+
+#### Arquivo `app.component.html`
+
+```html
+<h1>Pokedex</h1>
+<app-pokemon-list></app-pokemon-list>
+```
+
+### Passo 8: Criar o Modelo de Pokemon
+
+Você pode criar um modelo para representar os dados do Pokémon, mas, neste exemplo, vamos utilizar a interface da API diretamente. Se você preferir, pode criar uma interface `Pokemon` com as propriedades desejadas.
+
+## Explicação sobre o `HttpClientModule`
+
+Para usar o `HttpClient` em seu serviço, você precisará importar o `HttpClientModule` no seu `app.module.ts`:
+
 ```typescript
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http'; // Importando HttpClientModule
 
 import { AppComponent } from './app.component';
 import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
 import { PokemonCardComponent } from './pokemon-card/pokemon-card.component';
-
-import { HttpClientModule } from '@angular/common/http';
-import { PokemonService } from './service/pokemon.service';
 
 @NgModule({
   declarations: [
@@ -216,49 +294,51 @@ import { PokemonService } from './service/pokemon.service';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
+    HttpClientModule // Adicionando HttpClientModule aos imports
   ],
-  providers: [PokemonService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
 ```
-- **`HttpClientModule`**: Importante para realizar requisições HTTP.
 
-## Modelagem de Dados
+## Finalizando
 
-### `pokemon.model.ts`
-```typescript
-export interface Pokemon {
-    name: string;
-    url: string;
-}
-```
-- Define a estrutura de dados do Pokémon.
+Para rodar a aplicação, execute o seguinte comando no terminal:
 
-## Contribuição
-
-Se você gostaria de contribuir para este projeto, sinta-se à vontade para enviar um pull request ou abrir uma issue no repositório.
-
-## Licença
-
-Este projeto está sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
-## Agradecimentos
-
-- [PokeAPI](https://pokeapi.co/) - para fornecer os dados dos Pokémon.
-- [Angular](https://angular.io/) - por fornecer um framework poderoso e flexível.
-- Todos os contribuidores que ajudaram a tornar este projeto possível.
-
----
+```bash
+ng serve
 ```
 
-### Como Usar o README.md
+Acesse `http://localhost:4200/` no seu navegador para visualizar a Pokedex.
 
-1. **Crie o arquivo:** Crie um arquivo chamado `README.md` na raiz do seu projeto e cole o conteúdo acima.
+## Como Contribuir
 
-2. **Adapte conforme necessário:** Personalize partes como o link do repositório Git, a imagem do logo da Pokédex e qualquer outra informação que possa ser relevante para o seu projeto.
+Contribuições são sempre bem-vindas! Para contribuir com este projeto, siga as etapas abaixo:
 
-3. **Manutenção:** Atualize o README sempre que houver mudanças significativas no projeto, garantindo que a documentação esteja sempre em dia.
+1. Faça um fork do projeto.
+2. Crie uma nova branch com suas alterações:
+   ```bash
+   git checkout -b minha-nova-feature
+   ```
+3. Faça suas alterações e commit:
+   ```bash
+   git commit -m 'Adicionando nova feature'
+   ```
+4. Envie para o seu fork:
+   ```bash
+   git push origin minha-nova-feature
+   ```
+5. Abra um Pull Request explicando suas alterações.
 
-Esse README fornecerá uma visão clara e abrangente do seu projeto, facilitando para novos desenvolvedores e usuários entenderem como configurar e usar a aplicação.
+## Como Clonar o Projeto
+
+Para clonar o projeto em sua máquina local, use o comando:
+
+```bash
+git clone https://github.com/seu-usuario/angular-pokedex.git
+```
+
+Substitua `seu-usuario` pelo seu nome de usuário do GitHub.
+
+
