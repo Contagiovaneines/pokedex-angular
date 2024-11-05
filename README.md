@@ -1,7 +1,8 @@
-<div style="display: flex; align-items: center; justify-content: center;">
-    <h1 style="margin-right: 10px; font-family: Arial, sans-serif; font-size: 24px;">Pokedex</h1>
-    <img src="https://www.pngarts.com/files/4/Pokeball-Download-Transparent-PNG-Image.png" alt="Pokedex Logo" width="100" style="border: 2px solid #000; border-radius: 10px;">
+<div style="display: flex; align-items: center; justify-content: center; background-color: #f8f9fa; padding: 10px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
+    <img src="https://www.pngarts.com/files/4/Pokeball-Download-Transparent-PNG-Image.png" alt="Pokedex Logo" width="50" style="margin-right: 10px; border: 2px solid #000; border-radius: 10px;">
+    <h1 style="font-family: Arial, sans-serif; font-size: 24px; margin: 0;">Pokedex</h1>
 </div>
+
 
 ![Pokedex completa ](pokedex-img.png)
 
