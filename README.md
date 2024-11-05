@@ -1,6 +1,5 @@
-# Pokedex
 <div style="display: flex; align-items: center; justify-content: center;">
-    <h4 style="margin-right: 10px; font-family: Arial, sans-serif; font-size: 24px;">Pokedex</h4>
+    <h1 style="margin-right: 10px; font-family: Arial, sans-serif; font-size: 24px;">Pokedex</h1>
     <img src="https://www.pngarts.com/files/4/Pokeball-Download-Transparent-PNG-Image.png" alt="Pokedex Logo" width="100" style="border: 2px solid #000; border-radius: 10px;">
 </div>
 
