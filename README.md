@@ -1,7 +1,10 @@
 # Pokedex
 ![Pokedex completa ](pokedex-img.png)
 
-#### Pokedex <img src="https://www.pngarts.com/files/4/Pokeball-Download-Transparent-PNG-Image.png" alt="Pokedex Logo" width="100">
+<div style="display: flex; align-items: center; justify-content: center;">
+    <h4>Pokedex</h4>
+    <img src="https://www.pngarts.com/files/4/Pokeball-Download-Transparent-PNG-Image.png" alt="Pokedex Logo" width="100">
+</div>
 
 
 ## Introdução
