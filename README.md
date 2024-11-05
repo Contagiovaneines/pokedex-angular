@@ -2,7 +2,7 @@
 
 ![Pokedex Logo](https://www.pngarts.com/files/4/Pokeball-Download-Transparent-PNG-Image.png) <!-- Adicione uma imagem do logo da Pokédex aqui, se desejar -->
 
-Este projeto é uma aplicação web desenvolvida em Angular que utiliza a [PokeAPI](https://pokeapi.co/) para exibir uma lista de Pokémon. O objetivo do projeto é fornecer uma interface simples e intuitiva para visualizar informações básicas sobre os Pokémon.
+Este projeto é uma aplicação web desenvolvida em Angular que utiliza a [PokeAPI](https://pokeapi.co) para exibir uma lista de Pokémon. O objetivo do projeto é fornecer uma interface simples e intuitiva para visualizar informações básicas sobre os Pokémon.
 
 ## Sumário
 
