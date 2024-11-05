@@ -4,7 +4,6 @@
 </div>
 
 
-
 ![Pokedex completa ](pokedex-img.png)
 
 
