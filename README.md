@@ -395,4 +395,3 @@ git clone https://github.com/seu-usuario/angular-pokedex.git
 
 ---
 
-Sinta-se à vontade para modificar as instruções conforme necessário para melhor atender às suas necessidades e à sua equipe! 
